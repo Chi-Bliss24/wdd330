@@ -27,9 +27,12 @@ function cartItemTemplate(item) {
 
 function updateCartCount() {
   const cartItems = getLocalStorage("so-cart") || [];
-  const count = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
+  const count = cartItems.reduce(
+    (total, item) => total + (item.quantity || 1),
+    0,
+  );
 
-  const cartIcon = document.querySelector(".cart"); 
+  const cartIcon = document.querySelector(".cart");
 
   if (cartIcon) {
     let badge = cartIcon.querySelector(".cart-count");

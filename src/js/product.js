@@ -20,7 +20,7 @@ async function loadProduct() {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("product");
   const product = await dataSource.findProductById(productId);
-  
+
   document.querySelector("#addToCart").dataset.id = product.Id;
 }
 
